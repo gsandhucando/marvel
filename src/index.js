@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+// import dotenv from 'dotenv'
+// import errorReporter from './errorReporter'
+
+// dotenv.config()
+// errorReporter.client.report(new Error('faq example'))
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
