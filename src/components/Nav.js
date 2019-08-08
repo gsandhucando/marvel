@@ -1,5 +1,6 @@
 import React from "react";
 import { GoogleLogin } from "react-google-login";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const responseGoogle = response => {
@@ -7,8 +8,10 @@ const Nav = () => {
   };
   return (
     <div style={{ height: "14vh", background: "black" }}>
-      <h1 style={{ color: "red" }}>MARVEL</h1>
-      <div>
+      <Link to="/">
+      <h1 style={{ color: "red", display: 'flex', justifyContent: 'center' }}>MARVEL</h1>
+      </Link>
+      <div style={{display: 'flex', justifyContent: 'flex-end'}}>
         <GoogleLogin
           clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
           buttonText="Login"

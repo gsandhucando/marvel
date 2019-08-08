@@ -2,14 +2,34 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Nav from './components/Nav';
+// import Home from './components/Home';
+import Heros from './components/Heros';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import dotenv from 'dotenv'
 // import errorReporter from './errorReporter'
 
 // dotenv.config()
 // errorReporter.client.report(new Error('faq example'))
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const Index = () => {
+  return (
+    <div>
+      <Router>
+        <Nav />
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route exact path="/hero" component={Heros} />
+        </Switch>
+      </Router>
+    </div>
+  )
+}
+
+
+
+ReactDOM.render(<Index />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
