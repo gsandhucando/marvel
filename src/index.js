@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Nav from './components/Nav';
-// import Home from './components/Home';
-import Heros from './components/Heros';
+import Hero from './components/Hero'
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import dotenv from 'dotenv'
@@ -20,7 +19,7 @@ const Index = () => {
         <Nav />
         <Switch>
           <Route exact path="/" component={App} />
-          <Route exact path="/hero" component={Heros} />
+          <Route path="/hero/:id" component={Hero} />
         </Switch>
       </Router>
     </div>
