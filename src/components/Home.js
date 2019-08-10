@@ -12,7 +12,7 @@ var marvel = {
 
 let url = `https://gateway.marvel.com/v1/public/characters?ts=1&apikey=${
   marvel.publicKey
-}&hash=${marvel.hash}&limit=3`;
+}&hash=${marvel.hash}&limit=25`;
 
 const Home = () => {
   let [character, setCharacter] = useState({});
@@ -32,7 +32,6 @@ const Home = () => {
         }&hash=${marvel.hash}&name=${inputChangeCharacter}`
       )
       .then(res => {
-        console.log(res, "selected character");
         setCharacter(res.data.data.results[0]);
       })
       .catch(err => {
@@ -42,8 +41,6 @@ const Home = () => {
 
   useEffect(() => {
     axios.get(url).then(res => {
-      console.log(res.data.data.results);
-      // setCharacter(res.data.data.results);
       setSavedCharacter(res.data.data.results);
     });
   }, []);

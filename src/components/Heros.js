@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Heros = ({ name, description, thumbnail, resourceURI, id }) => {
-  console.log(thumbnail)
   return (
     <div>
       <Link to={`/hero/${id}`}>
@@ -16,7 +15,7 @@ const Heros = ({ name, description, thumbnail, resourceURI, id }) => {
       : null
     }
       </Link>
-    <p>{description}</p>
+    {/* <p>{description}</p> */}
     </div>
   );
 };
