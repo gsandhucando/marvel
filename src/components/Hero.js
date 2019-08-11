@@ -9,6 +9,12 @@ var marvel = {
   hash: env.HASH
 };
 
+/*
+const publicKey = process.env.PUBLIC_API_KEY
+const privateKey = process.env.PRIVATE_KEY
+const hash = "b1a4259b9e8f55ab5dbf584dc0eebf77"
+ */
+
 const Hero = props => {
   let [heroInfo, setHeroInfo] = useState([]);
   console.log(props.match);
