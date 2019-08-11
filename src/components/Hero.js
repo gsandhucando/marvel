@@ -11,8 +11,6 @@ var marvel = {
 
 const Hero = props => {
   let [heroInfo, setHeroInfo] = useState([]);
-  // let [undefinedHero, setUndefinedHer0] = useState=('Hero doesnt exist please try again')
-
   console.log(props.match);
 
   useEffect(() => {
@@ -24,6 +22,7 @@ const Hero = props => {
         }?ts=1&apikey=${marvel.publicKey}&hash=${marvel.hash}`
       )
       .then(response => {
+        console.log(response.data)
         setHeroInfo(response.data.data.results);
       })
       .catch(err => {

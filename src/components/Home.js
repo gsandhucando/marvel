@@ -18,6 +18,7 @@ const Home = () => {
   let [character, setCharacter] = useState({});
   let [savedCharacter, setSavedCharacter] = useState([]);
   let [inputChangeCharacter, setInputChangeCharacter] = useState("");
+  let [failedSearch, setFailedSearch] = useState(false);
 
   let onChange = event => {
     setInputChangeCharacter(event.target.value.toLowerCase().trim());
@@ -32,7 +33,13 @@ const Home = () => {
         }&hash=${marvel.hash}&name=${inputChangeCharacter}`
       )
       .then(res => {
-        setCharacter(res.data.data.results[0]);
+        if (res.data.data.results && res.data.data.results.length > 0) {
+          setCharacter(res.data.data.results[0]);
+          setFailedSearch(false)
+        } else {
+          setCharacter({})
+          setFailedSearch(true)
+        }
       })
       .catch(err => {
         console.log(err);
@@ -45,7 +52,7 @@ const Home = () => {
     });
   }, []);
 
-  let hero = <Heros key={character.id} {...character} />;
+  let hero = Object.keys(character).length > 0 ? <Heros key={character.id} {...character} /> : null;
   let searchHero = savedCharacter.map(char => (
     <Heros
       key={char.id}
@@ -53,14 +60,16 @@ const Home = () => {
     />
   ));
 
-    console.log(character)
-
   return (
     <>
       {Object.keys(character).length > 0 ? (
         hero
       ) : (
         <div className="home-container">
+          { failedSearch ?
+          <h1>Hero not found please try again</h1>
+          : null
+          }
           <form onSubmit={handleSubmit}>
             <input className='home-input' placeholder="Enter a Super Hero" onChange={onChange} />
             <input className='home-input-btn' type="submit" value="ENTER HERO" />

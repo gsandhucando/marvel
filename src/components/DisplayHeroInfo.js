@@ -15,9 +15,13 @@ const DisplayHeroInfo = ({ name, thumbnail, stories, description }) => {
       <div>
       <div className='displayhero-div'>
         <h1>{name}</h1>
+        <div className='display-description'>
         <p>{description}</p>
+        </div>
+        <div className='display-stories'>
         <h3>Stories</h3>
         {storyCollection}
+        </div>
       </div>
     </div>
     </div>
