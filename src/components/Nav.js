@@ -1,6 +1,7 @@
 import React from "react";
 import { GoogleLogin } from "react-google-login";
 import { Link } from "react-router-dom";
+import env from "../env.json";
 
 const Nav = () => {
   const responseGoogle = response => {
@@ -13,7 +14,7 @@ const Nav = () => {
       </Link>
       <div style={{display: 'flex', justifyContent: 'flex-end'}}>
         <GoogleLogin
-          clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+          clientId={`${env.GOOGLE_CLIENT}`}
           buttonText="Login"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}

@@ -15,7 +15,6 @@ const Heros = ({ name, description, thumbnail, resourceURI, id }) => {
       : null
     }
       </Link>
-    {/* <p>{description}</p> */}
     </div>
   );
 };

@@ -4,6 +4,34 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .App {
   text-align: center;
+}
+
+.home-input {
+  height: 30px;
+  width: 35%;
+}
+
+.home-input-btn {
+  height: 30px;
+  width: 100px;
+  background: red;
+  color: white;
+}
+
+.displayhero-div {
+  z-index: 9;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  line-height: 2em;
+  background: rgba(0, 0, 0, .6);
+  height: 100vh;
+  overflow: scroll;
 }

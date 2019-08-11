@@ -13,7 +13,7 @@ const DisplayHeroInfo = ({ name, thumbnail, stories, description }) => {
       }}
     >
       <div>
-      <div style={{zIndex: 9, color: 'white', textAlign: 'center', fontWeight: 'bold', lineHeight: '2em'}}>
+      <div className='displayhero-div'>
         <h1>{name}</h1>
         <p>{description}</p>
         <h3>Stories</h3>

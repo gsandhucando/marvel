@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Heros from "./Heros";
-import SearchedHero from "./SearchedHero";
+// import SearchedHero from "./SearchedHero";
 import env from "../env.json";
 import axios from "axios";
 
@@ -62,8 +62,8 @@ const Home = () => {
       ) : (
         <div className="home-container">
           <form onSubmit={handleSubmit}>
-            <input placeholder="Enter a Super Hero" onChange={onChange} />
-            <input type="submit" value="ENTER HERO" />
+            <input className='home-input' placeholder="Enter a Super Hero" onChange={onChange} />
+            <input className='home-input-btn' type="submit" value="ENTER HERO" />
           </form>
           <div
             style={{
